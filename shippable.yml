@@ -3,9 +3,10 @@ python:
  - 2.7
 install: true
 before_script:
- - cat cache_test.txt || true
+ - mkdir -p cached
+ - cat cached/cache_test.txt || true
 script:
- - echo "Running on cache" >> cache_test.txt
+ - echo "Running on cache" >> cached/cache_test.txt
  - mysql -e 'create database if not exists `fizzbin`;'
  - mysql < create_sproc.sql
  - mysql -D fizzbin -e 'call foobar();'

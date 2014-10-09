@@ -2,7 +2,10 @@ language: python
 python:
  - 2.7
 install: true
+before_script:
+ - cat cache_test.txt
 script:
+ - echo "Running on cache" >> cache_test.txt
  - mysql -e 'create database if not exists `fizzbin`;'
  - mysql < create_sproc.sql
  - mysql -D fizzbin -e 'call foobar();'

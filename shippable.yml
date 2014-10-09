@@ -7,4 +7,3 @@ script:
  - mysql < create_sproc.sql
  - mysql -D fizzbin -e 'call foobar();'
 cache: true
-commit_container: ragesh/mysql_sproc
